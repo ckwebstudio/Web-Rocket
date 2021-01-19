@@ -1,12 +1,20 @@
 /*
 Theme Name:Web Rocket
-Text Domain:Web Rocket
-Version: 1.1.0
+Text Domain:web_rocket
 Description: Web Rocket is a theme made to give ultra fast loading speed. It's a light weight fully responsive Wordpress theme Best for blogging, business websites  or portfolio Websites.
-Author: Chandrakanta Behera
+Author: CKWebStudio
 Theme URI: https://ckwebstudio.com/web-rocket-theme/
+Author URI: https://ckwebstudio.com/
+Requires at least: 5.3
+Tested up to: 5.6
+Requires PHP: 5.6
+Version: 1.0.0
 License: GNU General Public License v2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
+Tags: custom-menu, custom-logo, right-sidebar,featured-images, footer-widgets, blog, portfolio
+
+Web Rocket WordPress Theme, (C) 2021 ckwebstudio.com
+Web Rocket is distributed under the terms of the GNU GPL.
 */
 
 * {
@@ -46,4 +54,54 @@ License URI: https://www.gnu.org/licenses/gpl-2.0.html
     color: rgb(255, 255, 255);
     padding: 5px;
 }
-/* footer css */
+
+
+/* Text meant only for screen readers. */
+.screen-reader-text {
+    border: 0;
+    clip: rect(1px, 1px, 1px, 1px);
+    clip-path: inset(50%);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+    word-wrap: normal !important;
+  }
+.alignright {
+    float:right;
+    margin: 5px 0 20px 20px;
+}
+.alignleft {
+    float: left;
+    margin: 5px 20px 20px 0;
+}
+.aligncenter,
+div.aligncenter {
+    display: block;
+    margin: 5px auto 5px auto;
+}
+.wp-caption {
+    background: #fff;
+    border: 1px solid #f0f0f0;
+    max-width: 96%; /* Image does not overflow the content area */
+    padding: 5px 3px 10px;
+    text-align: center;
+}
+.wp-caption p.wp-caption-text {
+    font-size: 11px;
+    line-height: 17px;
+    margin: 0;
+    padding: 0 4px 5px;
+}
+.gallery-caption {
+    color: #D70807;
+  }
+  
+.bypostauthor {
+    font-weight: 600;
+  }
+.sticky{
+    color: black;
+}

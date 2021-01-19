@@ -1,10 +1,5 @@
-<?php
-/*
-Web Rocket Theme Header Page.
-*/
-?>
 <!doctype html>
-<html lang="en">
+<html <?php language_attributes(); ?> >
   <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -15,7 +10,7 @@ Web Rocket Theme Header Page.
     <?php endif; ?>
     <?php wp_head();?>
   </head>
-  <body>
-
+  <body <?php body_class(); ?>>
+  <?php wp_body_open(); ?>
    <!-- Nav Menu -->
    <?php include get_template_directory().'/inc/navbar.php' ?>

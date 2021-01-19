@@ -19,7 +19,7 @@
             <div class="container d-flex justify-content-md-end">
                 <form class="d-flex">
                     <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"
-                        action="<?php echo home_url(); ?>" name="s">
+                        action="<?php echo esc_url( home_url( '/' ) ); ?>" name="s">
                     <button class="btn btn-outline-success" type="submit">Search</button>
                 </form>
             </div>

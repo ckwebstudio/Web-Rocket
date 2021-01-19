@@ -32,6 +32,10 @@ function custom_fonts(){
 }
 add_action( 'wp_enqueue_scripts', 'custom_fonts' ); 
 
+if ( ! isset( $content_width ) ) {
+	$content_width = 600;
+}
+
 // theme support options starts
 function web_rocket_custom_logo_setup() {
 	$defaults = array(
@@ -47,8 +51,6 @@ add_action( 'after_setup_theme', 'web_rocket_custom_logo_setup' );
 register_nav_menus( 
     array('top_menu' => 'Main Menu')
 );
-
-add_theme_support( 'menus' );
 
 add_theme_support( 'html5', array(
     'search-form',
@@ -75,13 +77,13 @@ add_theme_support( 'title-tag' );
 add_theme_support( 'post-thumbnails' );
 
 add_theme_support( 'automatic-feed-links' );
-//theme support options end
+//theme support options endd
 
 // theme functions starts
 function get_widgets() {
 
 	register_sidebar(array(
-		'name'          => __( 'Main Sidebar','web-rocket' ),
+		'name'          => __( 'Main Sidebar','web_rocket' ),
 		'id'            => 'main_sidebar',
 		'before_widget' => '<p>',
 		'after_widget'  => '</p>',
@@ -89,7 +91,7 @@ function get_widgets() {
 		'after_title'   => '</h2>'
     ) );
 	register_sidebar(array(
-		'name'          => __( 'Footer 1','web-rocket' ),
+		'name'          => __( 'Footer 1','web_rocket' ),
 		'id'            => 'footer_widget_1',
 		'before_widget' => '<p>',
 		'after_widget'  => '</p>',
@@ -98,16 +100,16 @@ function get_widgets() {
     ) );
     
     register_sidebar(array(
-		'name'          => __( 'Footer 2','web-rocket' ),
+		'name'          => __( 'Footer 2','web_rocket' ),
 		'id'            => 'footer_widget_2',
-		'before_widget' => '<p>',
+		'before_widget' => '<h2>',
 		'after_widget'  => '</p>',
 		'before_title'  => '<h2>',
 		'after_title'   => '</h2>'
     ) );
     
     register_sidebar(array(
-		'name'          => __( 'Footer 3','web-rocket' ),
+		'name'          => __( 'Footer 3','web_rocket' ),
 		'id'            => 'footer_widget_3',
 		'before_widget' => '<p>',
 		'after_widget'  => '</p>',
@@ -116,7 +118,7 @@ function get_widgets() {
     ) );
     
     register_sidebar(array(
-		'name'          => __( 'Footer 4','web-rocket' ),
+		'name'          => __( 'Footer 4','web_rocket' ),
 		'id'            => 'footer_widget_4',
 		'before_widget' => '<p>',
 		'after_widget'  => '</p>',
@@ -125,7 +127,7 @@ function get_widgets() {
     ) );
     
     register_sidebar(array(
-		'name'          => __( 'Footer 5','web-rocket' ),
+		'name'          => __( 'Footer 5','web_rocket' ),
 		'id'            => 'footer_widget_5',
 		'before_widget' => '<p>',
 		'after_widget'  => '</p>',
@@ -134,7 +136,7 @@ function get_widgets() {
 	) );
 
     register_sidebar(array(
-		'name'          => __( 'Copywrite','web-rocket' ),
+		'name'          => __( 'Copywrite','web_rocket' ),
 		'id'            => 'copywrite',
 		'before_widget' => '<p>',
 		'after_widget'  => '</p>',
@@ -143,7 +145,7 @@ function get_widgets() {
 	) );
 
 	register_sidebar(array(
-		'name'          => __( 'Blog Main Section','web-rocket' ),
+		'name'          => __( 'Blog Main Section','web_rocket' ),
 		'id'            => 'Blog Main Section',
 		'before_widget' => '<p>',
 		'after_widget'  => '</p>',
@@ -151,7 +153,7 @@ function get_widgets() {
 		'after_title'   => '</h2>'
 	) );
 	register_sidebar(array(
-		'name'          => __( 'Blog Second Section 1','web-rocket' ),
+		'name'          => __( 'Blog Second Section 1','web_rocket' ),
 		'id'            => 'Blog Second Section 1',
 		'before_widget' => '<p>',
 		'after_widget'  => '</p>',
@@ -160,7 +162,7 @@ function get_widgets() {
 	) );
 
 	register_sidebar(array(
-		'name'          => __( 'Blog Second Section 2','web-rocket' ),
+		'name'          => __( 'Blog Second Section 2','web_rocket' ),
 		'id'            => 'Blog Second Section 2',
 		'before_widget' => '<p>',
 		'after_widget'  => '</p>',
@@ -169,7 +171,7 @@ function get_widgets() {
 	) );
 
 	register_sidebar(array(
-		'name'          => __( 'Blog Second Section 3','web-rocket' ),
+		'name'          => __( 'Blog Second Section 3','web_rocket' ),
 		'id'            => 'Blog Second Section 3',
 		'before_widget' => '<p>',
 		'after_widget'  => '</p>',
@@ -178,7 +180,7 @@ function get_widgets() {
 	) );
 
 	register_sidebar(array(
-		'name'          => __( 'Blog Second Section 4 ','web-rocket' ),
+		'name'          => __( 'Blog Second Section 4 ','web_rocket' ),
 		'id'            => 'Blog Second Section 4',
 		'before_widget' => '<p>',
 		'after_widget'  => '</p>',
@@ -188,4 +190,10 @@ function get_widgets() {
 
 }
 add_action( 'widgets_init', 'get_widgets' );
-// Theme Functions end
+
+function web_rocket_enqueue_comments_reply() {
+	if( get_option( 'thread_comments' ) ) {
+	wp_enqueue_script( 'comment-reply' );
+	}
+	}
+	add_action( 'comment_form_before', 'web_rocket_enqueue_comments_reply' );

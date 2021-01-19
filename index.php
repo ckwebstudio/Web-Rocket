@@ -44,7 +44,7 @@
                 <!-- blog loop -->
                 <div class="col-12 col-sm-4">
                     <a href="<?php the_permalink(); ?>"><img src="<?php the_post_thumbnail_url('thumbnail'); ?>"
-                            class="card-img-top" alt="..."></a>
+                            class="card-img-top" alt=""></a>
                 </div>
 
                 <div class="col-12 col-sm-8">

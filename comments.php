@@ -32,10 +32,23 @@ $web_rocket_comment_count = get_comments_number();
 					esc_html( number_format_i18n( $web_rocket_comment_count ) )
 				);
 				?>
+
+
 		<?php endif; ?>
 	</h2><!-- .comments-title -->
+	<!-- comments pagination starts -->
 
-	<!-- comment pagination to write -->
+	<nav aria-label="Page navigation example">
+    <ul class="pagination justify-content-center">
+
+        <li class="page-item">
+            <?php paginate_comments_links(); ?>
+        </li>
+
+    </ul>
+</nav>
+
+	<!-- comment pagination ends -->
 	<ol class="comment-list">
 		<?php
 			$args= array(

@@ -20,8 +20,14 @@
         </h1>
         <?php echo get_the_author() ?>
         <hr>
+        <div <?php get_the_tag_list() ?> > </div>
+        <hr>
         <?php if (have_posts()) : ?>
         <?php while (have_posts()) : the_post(); ?>
+
+       <?php if ( has_post_format( 'video' )) {
+         echo 'this is the video format';
+        }?>
         <div <?php post_class(); ?>>
           <?php the_content(); ?>
           <?php edit_post_link(); ?>
