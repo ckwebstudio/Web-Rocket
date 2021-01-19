@@ -1,0 +1,49 @@
+/*
+Theme Name:Web Rocket
+Text Domain:Web Rocket
+Version: 1.1.0
+Description: Web Rocket is a theme made to give ultra fast loading speed. It's a light weight fully responsive Wordpress theme Best for blogging, business websites  or portfolio Websites.
+Author: Chandrakanta Behera
+Theme URI: https://ckwebstudio.com/web-rocket-theme/
+License: GNU General Public License v2 or later
+License URI: https://www.gnu.org/licenses/gpl-2.0.html
+*/
+
+* {
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+/* Nav Menu */
+.top-navigation li a{
+  color: rgb(255, 255, 255);
+  text-align: -webkit-right;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+/* Nav Menu */
+
+/* footer css */
+.footerbar{
+    padding-top: 20px;
+}
+.footerbar h3{
+    color: rgb(255, 255, 255);
+    text-align: center;
+}
+.footer-widget-color{
+    color: white;
+}
+.footer-widget-color a{
+    color: white;
+}
+.hr{
+    color: rgb(255, 255, 255);
+    height: 4px;
+}
+.copywrite{
+    color: rgb(255, 255, 255);
+    padding: 5px;
+}
+/* footer css */
